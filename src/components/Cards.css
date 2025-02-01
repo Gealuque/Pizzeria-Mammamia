@@ -1,0 +1,42 @@
+.contenedor{
+    display: flex;
+    flex-direction: column;
+}
+.foto{
+    width: 300px;
+    height: auto;
+}
+
+.box_ingredientes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.text_ingredientes{
+    font-size: small;
+}
+.box_precio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.box1{
+    width: 50%;
+}
+  
+.box2{
+    width: 50%;
+}
+
+.bton{
+    display: flex;
+    justify-content: center;
+    font-size: 5px;
+}
