@@ -1,12 +1,18 @@
 .contenedor{
     display: flex;
     flex-direction: column;
+    border: solid 1px rgb(212, 212, 212);
+    padding-bottom: 8px;
 }
 .foto{
     width: 300px;
     height: auto;
+    padding-bottom: 8px;
 }
-
+.name_pizza{
+    display: flex;
+    padding-left: 8px;
+}
 .box_ingredientes{
     display: flex;
     flex-direction: column;

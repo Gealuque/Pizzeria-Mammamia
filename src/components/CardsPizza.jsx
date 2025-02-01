@@ -6,10 +6,12 @@ const CardPizza = ({img, name, price, ingredients}) => {
         <>
         <div className="contenedor">
             <img className="foto" src={img} alt={name} />
+            <div className="name_pizza">
             <h5>Pizza {name}</h5>
+            </div>
             <hr />
             <div className="box_ingredientes">
-            <span className="text-muted tex_sub_ing"> Ingredientes: </span>
+            <p className="text-muted tex_sub_ing"> Ingredientes: </p>
             <p className="text_ingredientes"> 🍕{ingredients.join(", ")}</p>
             </div>
             <hr />
