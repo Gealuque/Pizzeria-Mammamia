@@ -4,7 +4,7 @@ const Totales = (value) => {
         return value;
     }
 
-    return value.toLocaleString('es-ES',
+    return value.toLocaleString('es-CL',
         {
             style: 'decimal',
             minimumFractionDigits: 0, 
