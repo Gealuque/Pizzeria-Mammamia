@@ -6,23 +6,23 @@ const CardPizza = ({img, name, price, ingredients}) => {
         <>
         <div className="contenedor">
             <img className="foto" src={img} alt={name} />
-            <h4>Pizza {name}</h4>
+            <h5>Pizza {name}</h5>
             <hr />
             <div className="box_ingredientes">
-              <h6 className="text-muted"> Ingredientes: </h6>
-              <p className="text_ingredientes"> 🍕{ingredients}</p>
+            <span className="text-muted tex_sub_ing"> Ingredientes: </span>
+            <p className="text_ingredientes"> 🍕{ingredients.join(", ")}</p>
             </div>
             <hr />
             <div className="box_precio">
-              <h5>PRECIO: ${Totales(price)}</h5>
+            <h6>PRECIO: ${Totales(price)}</h6>
             </div>
 
             <div className="box">
                 <div className="box1">
-                    <button type="button" className="btn btn-light bton">Ver Más 👀</button>
+                    <button type="button" className="boton1">Ver Más 👀</button>
                 </div>
                 <div className="box2">
-                    <button type="button" className="btn btn-dark bton">Añadir 🛒</button>
+                    <button type="button" className="boton2">Añadir 🛒</button>
                 </div>
             </div>
         </div>

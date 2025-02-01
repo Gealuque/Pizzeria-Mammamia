@@ -1,7 +1,12 @@
 const Totales = (value) => {
+
+    if (typeof value !== 'number') {
+        return value;
+    }
+
     return value.toLocaleString('es-ES',
         {
-            currency: 'USD',
+            style: 'decimal',
             minimumFractionDigits: 0, 
             maximumFractionDigits: 0
         }

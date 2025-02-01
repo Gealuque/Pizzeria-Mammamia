@@ -40,7 +40,7 @@ return (
         </ul>
 
 
-        <form className="form-inline my-2 my-lg-0 my-2 my-sm-0 d-flex ml-auto border border-2 border-success p-1">
+        <form className="form-inline my-2 my-lg-0 my-2 my-sm-0 d-flex ml-auto border border-2 border-success p-1 rounded">
             <span className=""> 🛒 Total: $ {Totales(total)} </span>
         </form>
 </nav>
