@@ -1,5 +1,5 @@
 // Hito_2
-import './Register.css'
+import './Register_Login.css'
 import { useState } from 'react'
 
 const RegisterPage = () => {
@@ -19,38 +19,38 @@ const RegisterPage = () => {
   const handleCarga = async (evento) => {
     evento.preventDefault()
 
-  // Ahora destructuramos los datos para las validaciones
-  const { email, clave, confirmar } = registro
-  // Condiciones
-  if (!email.trim() || !clave.trim() || !confirmar.trim()) {
-    alert ('Todos los campos deben estar llenos')
-    return
-  }
+    // Ahora destructuramos los datos para las validaciones
+    const { email, clave, confirmar } = registro
+    // Condiciones
+    if (!email.trim() || !clave.trim() || !confirmar.trim()) {
+      alert('Todos los campos deben estar llenos')
+      return
+    }
 
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  if (!emailRegex.test(email)) {
-    alert('Ingrese un mail válido')
-    return
-  }
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    if (!emailRegex.test(email)) {
+      alert('Ingrese un mail válido')
+      return
+    }
 
-  if (clave.length < 6 || clave.length > 14) {
-    alert('La clave deben contener entre 6 y 14 carateres')
-    return
-  }
+    if (clave.length < 6 || clave.length > 14) {
+      alert('La clave deben contener entre 6 y 14 carateres')
+      return
+    }
 
-  if(clave !== confirmar) {
-    alert('Las claves deben ser iguales')
-    return
-  }
+    if (clave !== confirmar) {
+      alert('Las claves deben ser iguales')
+      return
+    }
 
     alert('Registro éxitoso!')
     setRegistro({ email: '', clave: '', confirmar: '' })
-  } 
+  }
 
   return (
     <>
       <form className='formulario' onSubmit={handleCarga}>
-          <div className='container_inputs'>
+        <div className='container_inputs'>
           <div className='box_input'>
             <label>Email</label>
             <input
@@ -80,11 +80,10 @@ const RegisterPage = () => {
             />
           </div>
         </div>
-          <button type='submit' className='btn btn-primary'>Enviar</button>
+        <button type='submit' className='btn btn-primary'>Enviar</button>
       </form>
     </>
-    )
- }
+  )
+}
 
 export default RegisterPage
-
