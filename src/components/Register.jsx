@@ -16,34 +16,38 @@ const RegisterPage = () => {
 
   // Controlamos que no haya carga antes de escribir los datos
 
-  const handleCarga = async(evento) => {
+  const handleCarga = async (evento) => {
     evento.preventDefault()
+
   // Ahora destructuramos los datos para las validaciones
   const { email, clave, confirmar } = registro
-  // Condicion 1: Espacios sin escritura en los labels
+  // Condiciones
   if (!email.trim() || !clave.trim() || !confirmar.trim()) {
     alert ('Todos los campos deben estar llenos')
+    return
   }
-  // Condición 2: Validación de mail
+
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   if (!emailRegex.test(email)) {
     alert('Ingrese un mail válido')
     return
   }
-  // Condición 3: Clave de mínimo 6 caracteres y máximo 14
-  if (clave.length < 6 || clave.length > 14){
+
+  if (clave.length < 6 || clave.length > 14) {
     alert('La clave deben contener entre 6 y 14 carateres')
     return
   }
-  // Condición 4: Clave y confirmación igual
-  if(clave != confirmar){
-    alert('Las clave deben ser iguales')
+
+  if(clave !== confirmar) {
+    alert('Las claves deben ser iguales')
     return
   }
-  alert('Registro éxitoso!')
-  setRegistro({ email: '', clave: '', confirmar: '' })
- }
-   return (
+
+    alert('Registro éxitoso!')
+    setRegistro({ email: '', clave: '', confirmar: '' })
+  } 
+
+  return (
     <>
       <form className='formulario' onSubmit={handleCarga}>
           <div className='container_inputs'>
@@ -54,12 +58,13 @@ const RegisterPage = () => {
               name='email'
               value={registro.email}
               onChange={handleCambio}
+              required
             />
           </div>
           <div className='box_input'>
             <label>Contraseña</label>
             <input
-              type='text'
+              type='password'
               name='clave'
               value={registro.clave}
               onChange={handleCambio}
@@ -68,7 +73,7 @@ const RegisterPage = () => {
           <div className='box_input'>
             <label>Confirmar Contraseña</label>
             <input
-              type='text'
+              type='password'
               name='confirmar'
               value={registro.confirmar}
               onChange={handleCambio}
@@ -79,5 +84,7 @@ const RegisterPage = () => {
       </form>
     </>
     )
-}
+ }
+
 export default RegisterPage
+
