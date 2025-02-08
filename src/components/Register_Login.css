@@ -26,4 +26,5 @@
 .box_input{
     display: flex;
     flex-direction: column;
+    width: 240px;
 }
