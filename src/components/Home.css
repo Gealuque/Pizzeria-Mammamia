@@ -1,8 +1,9 @@
 .cartas{
-    display: flex;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
     align-items: center;
-    justify-content: center;
-    width: 100%;
+    grid-row-gap: 20px;
     padding-top: 30px;
 }
+

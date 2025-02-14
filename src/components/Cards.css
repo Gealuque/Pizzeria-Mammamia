@@ -3,27 +3,39 @@
     flex-direction: column;
     border: solid 1px rgb(212, 212, 212);
     padding-bottom: 8px;
+    width: 75%;
 }
 .foto{
     width: 300px;
     height: auto;
-    padding-bottom: 8px;
+
+}
+.fotos_card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .name_pizza{
     display: flex;
     padding-left: 8px;
 }
+.descripcion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: small
+}
 .box_ingredientes{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    
 }
 .tex_sub_ing{
-    font-size: small;
+    font-size: medium;
 }
 .text_ingredientes{
-    font-size: x-small;
+    font-size: small;
 }
 .box_precio{
     display: flex;
