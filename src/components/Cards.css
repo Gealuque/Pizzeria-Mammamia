@@ -74,3 +74,54 @@
     color: white;
     border-radius: 5px;
 }
+
+/* Cards Cart*/
+
+.contenedor_2{
+    display: flex;
+    width: 450px;
+}
+.imagen{
+    width: 80px;
+    height: auto;
+}
+
+.min_box_1{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 70%;
+    gap: 5px;
+}
+.min_box_2{
+    display: flex;
+    width: 30%;
+    gap: 5px;
+}
+.min_box_3{
+    display: flex;
+    justify-content: start;
+
+}
+.btn_1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 23px;
+    height: 20px;
+    color: rgb(255, 18, 18);
+    border: 1px solid rgb(255, 18, 18);
+    border-radius: 3px;
+}
+.btn_2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 23px;
+    height: 20px;
+    color: rgb(9, 62, 239);
+    border: 1px solid rgb(9, 62, 239);
+    border-radius: 3px;
+}
+
+
