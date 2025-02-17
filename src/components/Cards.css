@@ -3,27 +3,39 @@
     flex-direction: column;
     border: solid 1px rgb(212, 212, 212);
     padding-bottom: 8px;
+    width: 75%;
 }
 .foto{
     width: 300px;
     height: auto;
-    padding-bottom: 8px;
+
+}
+.fotos_card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .name_pizza{
     display: flex;
     padding-left: 8px;
 }
+.descripcion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: small
+}
 .box_ingredientes{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    
 }
 .tex_sub_ing{
-    font-size: small;
+    font-size: medium;
 }
 .text_ingredientes{
-    font-size: x-small;
+    font-size: small;
 }
 .box_precio{
     display: flex;
@@ -62,3 +74,54 @@
     color: white;
     border-radius: 5px;
 }
+
+/* Cards Cart*/
+
+.contenedor_2{
+    display: flex;
+    width: 450px;
+}
+.imagen{
+    width: 80px;
+    height: auto;
+}
+
+.min_box_1{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 70%;
+    gap: 5px;
+}
+.min_box_2{
+    display: flex;
+    width: 30%;
+    gap: 5px;
+}
+.min_box_3{
+    display: flex;
+    justify-content: start;
+
+}
+.btn_1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 23px;
+    height: 20px;
+    color: rgb(255, 18, 18);
+    border: 1px solid rgb(255, 18, 18);
+    border-radius: 3px;
+}
+.btn_2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 23px;
+    height: 20px;
+    color: rgb(9, 62, 239);
+    border: 1px solid rgb(9, 62, 239);
+    border-radius: 3px;
+}
+
+
