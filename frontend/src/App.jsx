@@ -3,9 +3,10 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import Pizza from './components/Pizza'
 /* import RegisterPage from './components/Register' */
 /* import Login from './components/Login' */
-import Cart from './components/Cart'
+/* import Cart from './components/Cart' */
 
 const App = () => {
   return (
@@ -14,7 +15,8 @@ const App = () => {
       {/* <Home /> */}
       {/* <RegisterPage /> */}
       {/* <Login /> */}
-      <Cart />
+      {/* <Cart /> */}
+      <Pizza />
       <Footer />
     </>
   )
