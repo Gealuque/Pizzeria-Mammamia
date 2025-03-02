@@ -20,7 +20,7 @@
 
 .footer{
   color: white;
-  background-color: black;
+  background-color: rgb(33,37,41);
   width: 100%;
   display: flex;
   align-items: center;

@@ -1,14 +1,23 @@
 import { useState, useEffect } from 'react'
-import CardPizzaUnit from './Cardpizza'
-import './Pizza.css'
+import CardPizzaUnit from '../components/Cardpizza'
+import '../components/Pizza.css'
+import Swal from 'sweetalert2'
 
 const Pizza = () => {
   const [unitaria, setUnitaria] = useState({})
 
   const getUnitaria = async () => {
-    const res = await fetch('http://localhost:5000/api/pizzas/p001')
-    const data = await res.json()
-    return setUnitaria(data)
+    try {
+      const res = await fetch('http://localhost:5000/api/pizzas/p001')
+      const data = await res.json()
+      return setUnitaria(data)
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No se pueden obtener los datos de la API!'
+      })
+    }
   }
 
   useEffect(() => {

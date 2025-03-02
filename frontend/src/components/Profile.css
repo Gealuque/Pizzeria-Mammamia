@@ -1,0 +1,36 @@
+.container_profile{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(33,37,41);
+    align-items: center;
+    justify-content: center;
+    height: 88vh;
+}
+.min_box_profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    width: 250px;
+    height: 300px;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: rgb(223, 215, 215);
+}
+.titulo_profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;;
+}
+.min_box_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn_profile{
+    color: white;
+    background-color: black;
+    border-radius: 3px;
+    height: 35px;
+}
