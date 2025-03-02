@@ -6,7 +6,7 @@ const Profile = () => {
          <div className='container_profile'>
             <div className='min_box_profile'>
               <div className='titulo_profile'>
-                <h5>Datos Personales</h5>
+                <h5>Usuario</h5>
               </div>
               <p>Nombre: Comprador</p>
               <p>Apellido: De Pizza</p>
