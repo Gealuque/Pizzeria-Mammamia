@@ -1,5 +1,5 @@
 // Hito_2
-import './Register_Login.css'
+import '../components/Register_Login.css'
 import Swal from 'sweetalert2'
 import { useState } from 'react'
 

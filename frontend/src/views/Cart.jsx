@@ -1,8 +1,8 @@
-import CardCart from './CardCart'
+import CardCart from '../components/CardCart'
 import { pizzaCart } from '../../public/pizzas'
-import './Cart.css'
+import '../components/Cart.css'
 import { useState } from 'react'
-import Totales from './utilities/compra'
+import Totales from '../components/utilities/compra'
 
 const Cart = () => {
   const [cart, setCart] = useState(pizzaCart)

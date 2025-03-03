@@ -124,4 +124,53 @@
     border-radius: 3px;
 }
 
+/*  Card Pizza */
+
+.contenedor_cardpizza{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+
+}
+.box_pizza1{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(120, 116, 116);
+    width: 500px;
+    height: auto;
+    padding: 4px;
+    background-color: rgb(230, 223, 223);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)w;
+}
+
+.foto_pizza{
+    width: 550px;
+    height: auto;
+    border-radius: 15px;
+}
+.box_precio_pizza{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.min_box1{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+}
+.min_box2{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    padding-left: 11px;
+    padding-right: 11px;
+    justify-content: center;
+    padding-bottom: 4px;
+}
+
+
 

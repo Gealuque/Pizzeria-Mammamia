@@ -1,0 +1,17 @@
+.contenedor_NotFound{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    padding-bottom: 15px;
+    padding-top: 20px;
+    background-color: rgb(33,37,41);
+    height: 88vh;
+}
+.foto_NotFound{
+    width: 450px;
+    height: auto;
+    border-radius: 170px;
+    padding-bottom: 15px;
+}
