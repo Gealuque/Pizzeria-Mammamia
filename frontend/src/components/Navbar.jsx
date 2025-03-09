@@ -2,6 +2,7 @@ import { useState, useContext } from 'react'
 import Totales from './utilities/compra'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../store/CartContext'
+import '../index.css'
 
 const Navbar = () => {
   const { total } = useContext(CartContext)
@@ -38,9 +39,9 @@ const Navbar = () => {
           </>
         )}
       </ul>
-      <Link to='/cart' className='text-decore-none text-white'>
-        <form className='form-inline my-2 my-lg-0 my-2 my-sm-0 d-flex ml-auto border border-2 border-success p-1 rounded'>
-          <span> 🛒 Total: $ {Totales(total)} </span>
+      <Link to='/cart' className='text-decoration-none'>
+        <form className='my-2 my-lg-0 my-2 my-sm-0 d-flex ml-auto border p-2 rounded'>
+          <span className='text1_nav'> 🛒 Total: $ {Totales(total)} </span>
         </form>
       </Link>
     </nav>

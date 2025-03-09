@@ -74,6 +74,9 @@
     color: white;
     border-radius: 5px;
 }
+.boton2:active{
+    background-color: rgb(162, 224, 161);
+}
 
 /* Cards Cart*/
 
