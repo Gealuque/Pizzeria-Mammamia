@@ -10,7 +10,7 @@ const Navbar = () => {
   const [Logeo, setLogeo] = useState(token)
 
   return (
-    <nav className='navbar navbar-expand-lg navbar-dark bg-dark text-white d-flex justify-content-between'>
+    <nav className='navbar navbar-expand-lg navbar-dark bg-dark text-white d-flex justify-content-between fixed-top'>
       {/* Siempre Visible */}
       <Link to='./' className='navbar-brand text-decore-none'> Pizzeria Mamma Mía!</Link>
       <ul className='navbar-nav d-flex mr-auto mt-2 mt-lg-0 text1_nav d-flex gap-2'>
