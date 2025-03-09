@@ -1,8 +1,10 @@
 import Totales from './utilities/compra'
 import './Cards.css'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { CartContext } from '../store/CartContext'
 
-const CardPizza = ({ img, name, price, ingredients, description }) => {
+const CardPizza = ({ id, img, name, price, ingredients, description }) => {
+  const { suma } = useContext(CartContext)
   const [Mostrar, setMostrar] = useState(true)
   const toggleVisibility = () => {
     setMostrar(!Mostrar)
@@ -39,7 +41,7 @@ const CardPizza = ({ img, name, price, ingredients, description }) => {
             <button type='button' className='boton1' onClick={toggleVisibility}> {Mostrar ? 'Ver Más 👀' : 'Ver Menos'}</button>
           </div>
           <div className='box2'>
-            <button type='button' className='boton2'>Añadir 🛒</button>
+            <button type='button' className='boton2' onClick={() => suma(id)}>Añadir 🛒</button>
           </div>
         </div>
       </div>

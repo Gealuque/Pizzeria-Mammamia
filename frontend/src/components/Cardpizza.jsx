@@ -1,7 +1,10 @@
 import Totales from './utilities/compra'
 import './Cards.css'
+import { CartContext } from '../store/CartContext'
+import { useContext } from 'react'
 
-const CardPizzaUnit = ({ img, name, price, ingredients, description }) => {
+const CardPizzaUnit = ({ id, img, name, price, ingredients, description }) => {
+  const { suma } = useContext(CartContext)
   const primeraLetra = (texto) => {
     return texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase()
   }
@@ -32,7 +35,7 @@ const CardPizzaUnit = ({ img, name, price, ingredients, description }) => {
               <h6>PRECIO: ${Totales(price)}</h6>
             </div>
             <div className='min_box2'>
-              <button type='button' className='boton2'>Añadir 🛒</button>
+              <button type='button' className='boton2' onClick={() => suma(id)}>Añadir 🛒</button>
             </div>
           </div>
         </div>
