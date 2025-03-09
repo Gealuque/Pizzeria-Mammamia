@@ -129,6 +129,7 @@
 .contenedor_cardpizza{
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 5px;
 
 }
@@ -136,16 +137,17 @@
     display: flex;
     flex-direction: column;
     border: 1px solid rgb(120, 116, 116);
-    width: 500px;
+    width: 450px;
     height: auto;
+    font-size: small;
     padding: 4px;
     background-color: rgb(230, 223, 223);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)w;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .foto_pizza{
-    width: 550px;
+    width: 400px;
     height: auto;
     border-radius: 15px;
 }

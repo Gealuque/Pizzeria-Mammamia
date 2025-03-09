@@ -1,17 +1,10 @@
 import Totales from './utilities/compra'
 import './Cards.css'
+import { CartContext } from '../store/CartContext'
+import { useContext } from 'react'
 
-const CardCart = ({ img, name, count, price, id, actualizarCount }) => {
-  const suma = () => {
-    if (count > 0) {
-      actualizarCount(id, count + 1)
-    }
-  }
-  const resta = () => {
-    if (count > 0) {
-      actualizarCount(id, count - 1)
-    }
-  }
+const CardCart = ({ img, name, count, price, id }) => {
+  const { suma, resta } = useContext(CartContext)
   return (
     <>
       <section className='contenedor_2'>
@@ -21,9 +14,9 @@ const CardCart = ({ img, name, count, price, id, actualizarCount }) => {
         </div>
         <div className='min_box_2'>
           <span>${Totales(price)}</span>
-          <button type='button' className='btn_1' onClick={resta}>-</button>
+          <button type='button' className='btn_1' onClick={() => resta(id)}>-</button>
           <span>{count}</span>
-          <button type='button' className='btn_2' onClick={suma}>+</button>
+          <button type='button' className='btn_2' onClick={() => suma(id)}>+</button>
         </div>
       </section>
     </>

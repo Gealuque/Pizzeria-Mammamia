@@ -1,27 +1,11 @@
+import { useContext } from 'react'
 import CardCart from '../components/CardCart'
-import { pizzaCart } from '../../public/pizzas'
 import '../components/Cart.css'
-import { useState } from 'react'
 import Totales from '../components/utilities/compra'
+import { CartContext } from '../store/CartContext'
 
 const Cart = () => {
-  const [cart, setCart] = useState(pizzaCart)
-  const actualizarCount = (id, nuevoCount) => {
-    if (nuevoCount === 0) {
-      setCart(prevPizzacart => prevPizzacart.filter(pizza => pizza.id !== id))
-    }
-    setCart(prevPizzacart =>
-      prevPizzacart.map(pizza =>
-        pizza.id === id ? { ...pizza, count: nuevoCount } : pizza
-      )
-    )
-  }
-  const calcularTotales = (cart) => {
-    return cart.reduce((total, pizza) => {
-      return total + pizza.price * pizza.count
-    }, 0)
-  }
-  const total = calcularTotales(cart)
+  const { cart, total, actualizarCount } = useContext(CartContext)
   return (
     <>
       <main className='contenedor_3'>

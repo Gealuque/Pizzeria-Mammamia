@@ -1,40 +1,25 @@
-import { useState, useEffect } from 'react'
 import CardPizzaUnit from '../components/Cardpizza'
 import '../components/Pizza.css'
-import Swal from 'sweetalert2'
+import { HomeContext } from '../store/HomeContext'
+import { useContext } from 'react'
 
 const Pizza = () => {
-  const [unitaria, setUnitaria] = useState({})
-
-  const getUnitaria = async () => {
-    try {
-      const res = await fetch('http://localhost:5000/api/pizzas/p001')
-      const data = await res.json()
-      return setUnitaria(data)
-    } catch (error) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'No se pueden obtener los datos de la API!'
-      })
-    }
-  }
-
-  useEffect(() => {
-    getUnitaria()
-  }, [])
-
+  const { pizzas } = useContext(HomeContext)
   return (
     <>
       <main className='container_pizza'>
-        <CardPizzaUnit
-          key={unitaria.id}
-          name={unitaria.name}
-          price={unitaria.price}
-          ingredients={unitaria.ingredients}
-          img={unitaria.img}
-          description={unitaria.desc}
-        />
+        {pizzas.map((pizza) => (
+          <CardPizzaUnit
+            key={pizza.id}
+            id={pizza.id}
+            name={pizza.name}
+            price={pizza.price}
+            ingredients={pizza.ingredients}
+            img={pizza.img}
+            description={pizza.desc}
+          />
+        ))}
+
       </main>
     </>
   )
