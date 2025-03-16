@@ -1,13 +1,13 @@
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import Totales from './utilities/compra'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../store/CartContext'
 import '../index.css'
+import { LoginContext } from '../store/loginContext'
 
 const Navbar = () => {
   const { total } = useContext(CartContext)
-  const token = false
-  const [Logeo, setLogeo] = useState(token)
+  const { token, logout } = useContext(LoginContext)
 
   return (
     <nav className='navbar navbar-expand-lg navbar-dark bg-dark text-white d-flex justify-content-between fixed-top'>
@@ -18,17 +18,17 @@ const Navbar = () => {
           <Link to='/' className='text-decore-none'><button type='button' className='btn btn-dark border'>🍕 Home</button></Link>
         </li>
         {/* Condicionados */}
-        {Logeo && (
+        {token && (
           <>
             <li className='nav-item'>
               <Link to='/profile' className='text-decore-none'> <button type='button' className='btn btn-dark border'>🔓 Profile</button></Link>
             </li>
             <li className='nav-item'>
-              <button type='button' className='btn btn-dark border'>🔒 Logout</button>
+              <button type='button' className='btn btn-dark border' onClick={logout}>🔒 Logout</button>
             </li>
           </>
         )}
-        {!Logeo && (
+        {!token && (
           <>
             <li className='nav-item'>
               <Link to='/login' className='text-decore-none'><button type='button' className='btn btn-dark border'>🔐 Login</button></Link>

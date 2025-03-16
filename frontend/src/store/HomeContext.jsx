@@ -5,8 +5,9 @@ export const HomeContext = createContext()
 
 const HomeProvider = ({ children }) => {
   const [pizzas, setPizzas] = useState([])
+  const [onePizza, setOnePizza] = useState(null)
 
-  const getPizza = async () => {
+  const getPizzas = async () => {
     try {
       const res = await fetch('http://localhost:5000/api/pizzas')
       const data = await res.json()
@@ -21,11 +22,25 @@ const HomeProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    getPizza()
+    getPizzas()
   }, [])
 
+  const getOnePizza = async (id) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/pizzas/${id}`)
+      const data = await res.json()
+      return setOnePizza(data)
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No se pueden obtener los datos de la API!'
+      })
+    }
+  }
+
   return (
-    <HomeContext.Provider value={{ pizzas, getPizza }}>
+    <HomeContext.Provider value={{ onePizza, pizzas, getPizzas, getOnePizza }}>
       {children}
     </HomeContext.Provider>
   )

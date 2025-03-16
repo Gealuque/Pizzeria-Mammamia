@@ -12,6 +12,7 @@ import NotFound from './views/NotFound'
 import Profile from './views/Profile'
 import CartProvider from './store/CartContext'
 import HomeProvider from './store/HomeContext'
+import LoginProvider from './store/loginContext'
 
 const App = () => {
   return (
@@ -19,16 +20,18 @@ const App = () => {
       <BrowserRouter>
         <HomeProvider>
           <CartProvider>
-            <Navbar />
-            <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/register' element={<RegisterPage />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/cart' element={<Cart />} />
-              <Route path='/pizza' element={<Pizza />} />
-              <Route path='/profile' element={<Profile />} />
-              <Route path='/*' element={<NotFound />} />
-            </Routes>
+            <LoginProvider>
+              <Navbar />
+              <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/register' element={<RegisterPage />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/pizza/:id' element={<Pizza />} />
+                <Route path='/profile' element={<Profile />} />
+                <Route path='/*' element={<NotFound />} />
+              </Routes>
+            </LoginProvider>
           </CartProvider>
         </HomeProvider>
         <Footer />

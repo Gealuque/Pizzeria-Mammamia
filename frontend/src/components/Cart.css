@@ -19,3 +19,14 @@
     background-color: black;
     color: white;
 }
+.btn_3:hover{
+    background-color: rgb(58, 144, 58);
+}
+
+.btn_3_deshabilitado{
+    background-color: rgb(155, 154, 154);
+    color: white;
+}
+.btn_3_deshabilitado:hover{
+    background-color: rgb(155, 154, 154);
+}
