@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 88vh;
+    height: 96vh;
     align-items: center;
     
 }
@@ -18,4 +18,15 @@
     border-radius: 5px;
     background-color: black;
     color: white;
+}
+.btn_3:hover{
+    background-color: rgb(58, 144, 58);
+}
+
+.btn_3_deshabilitado{
+    background-color: rgb(155, 154, 154);
+    color: white;
+}
+.btn_3_deshabilitado:hover{
+    background-color: rgb(155, 154, 154);
 }

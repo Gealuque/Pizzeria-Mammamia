@@ -1,10 +1,20 @@
-// Hito_2
 import '../components/Register_Login.css'
 import Swal from 'sweetalert2'
-import { useState } from 'react'
+import { useState, useContext, useEffect } from 'react'
+import { LoginContext } from '../store/loginContext'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
-// Primero declaramos todos los componentes de nuestro formulario
+  const { token } = useContext(LoginContext)
+  const navegador = useNavigate()
+
+  useEffect(() => {
+    if (token) {
+      navegador('/')
+    }
+  }, [token, navegador])
+
+  // Primero declaramos todos los componentes de nuestro formulario
   const [login, setLogin] = useState({
     email: '',
     clave: ''

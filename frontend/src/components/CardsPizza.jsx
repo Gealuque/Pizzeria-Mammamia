@@ -1,14 +1,12 @@
 import Totales from './utilities/compra'
 import './Cards.css'
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { CartContext } from '../store/CartContext'
+import { Link } from 'react-router-dom'
 
 const CardPizza = ({ id, img, name, price, ingredients, description }) => {
   const { suma } = useContext(CartContext)
-  const [Mostrar, setMostrar] = useState(true)
-  const toggleVisibility = () => {
-    setMostrar(!Mostrar)
-  }
+
   return (
     <>
       <div className='contenedor'>
@@ -18,11 +16,9 @@ const CardPizza = ({ id, img, name, price, ingredients, description }) => {
         <div className='name_pizza'>
           <h5>Pizza {name}</h5>
         </div>
-        {!Mostrar && (
-          <div className='descripcion'>
-            <p>{description}</p>
-          </div>
-        )}
+        <div className='descripcion'>
+          <p>{description}</p>
+        </div>
         <hr />
         <div className='box_ingredientes'>
           <span className='text-muted tex_sub_ing'> 🍕Ingredientes: </span>
@@ -38,7 +34,10 @@ const CardPizza = ({ id, img, name, price, ingredients, description }) => {
 
         <div className='box'>
           <div className='box1'>
-            <button type='button' className='boton1' onClick={toggleVisibility}> {Mostrar ? 'Ver Más 👀' : 'Ver Menos'}</button>
+            <Link to={`/pizza/${id}`}>
+              <button type='button' className='boton1'>Ver Más 👀</button>
+            </Link>
+
           </div>
           <div className='box2'>
             <button type='button' className='boton2' onClick={() => suma(id)}>Añadir 🛒</button>
