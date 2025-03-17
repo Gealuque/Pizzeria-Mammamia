@@ -1,21 +1,17 @@
 import '../components/Profile.css'
-import { useContext, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
 import { LoginContext } from '../store/loginContext'
+import { Navigate } from 'react-router-dom'
 
 const Profile = () => {
-  const { token, logout } = useContext(LoginContext)
-  const navigate = useNavigate()
+  const { logout, token } = useContext(LoginContext)
 
   const deslogeo = () => {
     logout()
   }
-
-  useEffect(() => {
-    if (!token) {
-      navigate('/')
-    }
-  }, [token, navigate])
+  if (!token) {
+    return <Navigate to='/login' />
+  }
 
   return (
     <>
