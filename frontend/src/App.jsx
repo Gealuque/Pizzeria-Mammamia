@@ -13,6 +13,7 @@ import Profile from './views/Profile'
 import CartProvider from './store/CartContext'
 import HomeProvider from './store/HomeContext'
 import LoginProvider from './store/loginContext'
+import ProtectRuta from './components/RutaProtegida'
 
 const App = () => {
   return (
@@ -28,7 +29,7 @@ const App = () => {
                 <Route path='/login' element={<Login />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/pizza/:id' element={<Pizza />} />
-                <Route path='/profile' element={<Profile />} />
+                <Route path='/profile' element={<ProtectRuta> <Profile /> </ProtectRuta>} />
                 <Route path='/*' element={<NotFound />} />
               </Routes>
             </LoginProvider>
