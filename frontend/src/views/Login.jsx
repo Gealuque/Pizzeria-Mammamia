@@ -61,36 +61,7 @@ const Login = () => {
       return
     }
     await getLogin(email, clave)
-    // Ahora vamos a validar los usuarios registrados del localstorage
-    { /*const validEmail = localStorage.getItem('email')
-    const validClave = localStorage.getItem('password')
-    if (!validEmail || !validClave) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Usuario no registrado'
-      })
-      setLogin({ email: '', clave: '' })
-      return
-    }
-    if (email !== validEmail) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'El usuario no existe'
-      })
-      setLogin({ email: '' })
-      return
-    }
-    if (clave !== validClave) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Intente de nuevo...',
-        text: 'Clave incorrecta'
-      })
-      setLogin({ clave: '' })
-      return
-    } */ }
+
     Swal.fire({
       title: 'Login éxitoso!',
       icon: 'success',
