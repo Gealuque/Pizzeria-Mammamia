@@ -5,7 +5,7 @@ import { LoginContext } from '../store/loginContext'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
-  const { token } = useContext(LoginContext)
+  const { token, getLogin } = useContext(LoginContext)
   const navegador = useNavigate()
 
   useEffect(() => {
@@ -26,7 +26,6 @@ const Login = () => {
   }
 
   // Controlamos que no haya carga antes de escribir los datos
-
   const handleCarga = async (evento) => {
     evento.preventDefault()
 
@@ -61,7 +60,37 @@ const Login = () => {
       setLogin({ clave: '' })
       return
     }
-
+    await getLogin(email, clave)
+    // Ahora vamos a validar los usuarios registrados del localstorage
+    { /*const validEmail = localStorage.getItem('email')
+    const validClave = localStorage.getItem('password')
+    if (!validEmail || !validClave) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Usuario no registrado'
+      })
+      setLogin({ email: '', clave: '' })
+      return
+    }
+    if (email !== validEmail) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'El usuario no existe'
+      })
+      setLogin({ email: '' })
+      return
+    }
+    if (clave !== validClave) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Intente de nuevo...',
+        text: 'Clave incorrecta'
+      })
+      setLogin({ clave: '' })
+      return
+    } */ }
     Swal.fire({
       title: 'Login éxitoso!',
       icon: 'success',

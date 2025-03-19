@@ -4,7 +4,7 @@ import { LoginContext } from '../store/loginContext'
 import { Navigate } from 'react-router-dom'
 
 const Profile = () => {
-  const { logout, token } = useContext(LoginContext)
+  const { logout, token, datosUser } = useContext(LoginContext)
 
   const deslogeo = () => {
     logout()
@@ -20,9 +20,7 @@ const Profile = () => {
           <div className='titulo_profile'>
             <h5>Usuario</h5>
           </div>
-          <p>Nombre: Comprador</p>
-          <p>Apellido: De Pizza</p>
-          <p>Email: pizzalover@gmail.com</p>
+          <p>Email:{datosUser.email} </p>
           <div className='min_box_btn'>
             <button className='btn_profile' onClick={deslogeo}>Logout</button>
           </div>
