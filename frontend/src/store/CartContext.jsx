@@ -6,6 +6,7 @@ export const CartContext = createContext()
 const CartProvider = ({ children }) => {
   const { pizzas } = useContext(HomeContext)
   const [cart, setCart] = useState([])
+
   const actualizarCount = (id, nuevoCount) => {
     if (nuevoCount === 0) {
       setCart(prevPizzacart => prevPizzacart.filter(pizza => pizza.id !== id))
@@ -46,7 +47,7 @@ const CartProvider = ({ children }) => {
   const total = calcularTotales()
 
   return (
-    <CartContext.Provider value={{ cart, total, suma, resta, actualizarCount }}>
+    <CartContext.Provider value={{ cart, total, suma, resta, actualizarCount, setCart }}>
       {children}
     </CartContext.Provider>
   )

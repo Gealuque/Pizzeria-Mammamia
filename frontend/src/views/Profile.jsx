@@ -20,7 +20,7 @@ const Profile = () => {
           <div className='titulo_profile'>
             <h5>Usuario</h5>
           </div>
-          <p>Email:{datosUser.email} </p>
+          <p>Email: {datosUser.email} </p>
           <div className='min_box_btn'>
             <button className='btn_profile' onClick={deslogeo}>Logout</button>
           </div>

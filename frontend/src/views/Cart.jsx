@@ -4,15 +4,43 @@ import '../components/Cart.css'
 import Totales from '../components/utilities/compra'
 import { CartContext } from '../store/CartContext'
 import { LoginContext } from '../store/loginContext'
+import axios from 'axios'
+import Swal from 'sweetalert2'
 
 const Cart = () => {
-  const { cart, total, actualizarCount } = useContext(CartContext)
-  const { token } = useContext(LoginContext)
-  const [habilitado, setHabilitado] = useState(token)
+  const { cart, total, actualizarCount, setCart } = useContext(CartContext)
+  const { token, datosUser } = useContext(LoginContext)
+  const [habilitado, setHabilitado] = useState(false)
 
   useEffect(() => {
-    setHabilitado(token)
-  }, [token])
+    if (token && datosUser && datosUser.email) {
+      setHabilitado(true)
+    } else {
+      setHabilitado(false)
+    }
+  }, [token, datosUser])
+
+  const pago = async () => {
+    const datosPago = {
+      monto: total,
+      email: datosUser.email
+    }
+    try {
+      const res = axios.post('http://localhost:5000/api/checkouts', datosPago)
+      Swal.fire({
+        title: 'Pago éxitoso!',
+        icon: 'success',
+        draggable: true
+      })
+      setCart([])
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Pago No procesado!'
+      })
+    }
+  }
 
   return (
     <>
@@ -31,7 +59,7 @@ const Cart = () => {
             />
           ))}
           <h3>Total: ${Totales(total)} </h3>
-          <button className={`btn_3 ${habilitado ? '' : 'btn_3_deshabilitado'} `} disabled={!habilitado}>Pagar</button>
+          <button className={`btn_3 ${habilitado ? '' : 'btn_3_deshabilitado'} `} disabled={!habilitado} onClick={pago}>Pagar</button>
         </section>
       </main>
     </>
