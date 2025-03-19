@@ -1,12 +1,11 @@
-// Hito_2
 import '../components/Register_Login.css'
 import Swal from 'sweetalert2'
 import { useState, useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { LoginContext } from '../store/loginContext'
+import { LoginContext } from '../store/LoginContext'
 
 const RegisterPage = () => {
-  const { token } = useContext(LoginContext)
+  const { token, getRegister } = useContext(LoginContext)
   const navegador = useNavigate()
 
   useEffect(() => {
@@ -75,6 +74,7 @@ const RegisterPage = () => {
       setRegistro({ email: '', clave: '', confirmar: '' })
       return
     }
+    await getRegister(email, clave)
     Swal.fire({
       title: 'Registro éxitoso!',
       icon: 'success',
